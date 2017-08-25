@@ -4,7 +4,7 @@
       docker pull vzwingmann/wiringpi:arm
 
 ## Construction de l'image
-      docker build -t vzwingma/wiringpi:arm .
+      docker build -t vzwingmann/wiringpi:arm .
 
 ## Exécution du conteneur 
       docker run --name=dht11 -d \
@@ -14,7 +14,7 @@
 		-v $HOME_PATH/:/data/bin \
 		--device /dev/ttyAMA0:/dev/ttyAMA0 \
 		--device /dev/mem:/dev/mem \
-		-it vzwingma/wiringpi:arm
+		-it vzwingmann/wiringpi:arm
     
 où 
 - `$HOME_PATH/executable` : Répertoire vers les exécutables
