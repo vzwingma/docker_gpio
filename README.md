@@ -1,23 +1,23 @@
-# Image docker WiringPi
+# Image docker WiringPi - DHT11
+
+Le conteneur expose une API de commande du binaire [recepteurDHT11](https://github.com/vzwingma/domotique/blob/master/receptionDHT11/recepteurDHT11) afin de renvoyer les valeurs de température et d'humidité du capteur DHT11
+
+Plus d'informations sur le [Wiki du projet](https://github.com/vzwingma/domotique/wiki/_Module-Temp%C3%A9rature)
 
 ## Téléchargement depuis Docker Hub
-      docker pull vzwingmann/wiringpi:arm
+      docker pull vzwingmann/wiringpi:arm-dht11
 
 ## Construction de l'image
-      docker build -t vzwingmann/wiringpi:arm .
+      docker build -t vzwingmann/wiringpi:arm-dht11 .
 
 ## Exécution du conteneur 
       docker run --name=dht11 -d \
 		--privileged \
 		-p 9000:9000 \
 		-p 9100:9100 \
-		-v $HOME_PATH/:/data/bin \
 		--device /dev/ttyAMA0:/dev/ttyAMA0 \
 		--device /dev/mem:/dev/mem \
-		-it vzwingmann/wiringpi:arm
-    
-où 
-- `$HOME_PATH/executable` : Répertoire vers les exécutables
+		-it vzwingmann/wiringpi:arm-dht11
 
 ## Utilisation
 
@@ -33,6 +33,6 @@ donne la réponse HTTP\200
 	  
 ### Commande
 
-   [http://url-conteneur:9000/nom_exécutable](http://url-conteneur:9000/nom_exécutable)
+   [http://url-conteneur:9000/recepteurDHT11](http://url-conteneur:9000/recepteurDHT11)
 
-donne la réponse HTTP\20 et renvoie le résultat de l'exécution de l'exécutable
+donne la réponse HTTP\20 et renvoie le résultat de l'exécution de l'exécutable `recepteurDHT11`
