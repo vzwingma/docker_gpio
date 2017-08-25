@@ -25,7 +25,7 @@ Le conteneur expose 2 routes :
 
 ### Information 
 
-      [informations](http:\\url-conteneur:9100\_info)
+   [http://url-conteneur:9100/_info](http://url-conteneur:9100/_info)
 
 donne la réponse HTTP\200	  
 	  
@@ -33,6 +33,6 @@ donne la réponse HTTP\200
 	  
 ### Commande
 
-     [commandes](http:\\url-conteneur:9000\nom_exécutable)
+   [http://url-conteneur:9000/nom_exécutable](http://url-conteneur:9000/nom_exécutable)
 
 donne la réponse HTTP\20 et renvoie le résultat de l'exécution de l'exécutable
