@@ -9,6 +9,7 @@
 ## Exécution du conteneur 
       docker run --name=dht11 -d \
 		--privileged \
+		-e "APP_NAME=Nom Application"
 		-p 9000:9000 \
 		-p 9100:9100 \
 		-v $HOME_PATH/:/data/bin \
@@ -18,6 +19,7 @@
     
 où 
 - `$HOME_PATH/executable` : Répertoire vers les exécutables
+- `APP_NAME` : Nom de l'application
 
 ## Utilisation
 
