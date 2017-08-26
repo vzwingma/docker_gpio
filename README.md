@@ -13,6 +13,7 @@ Plus d'informations sur le [Wiki du projet](https://github.com/vzwingma/domotiqu
 ## Exécution du conteneur 
       docker run --name=dht11 -d \
 		--privileged \
+		-e "APP_NAME=DHT11"
 		-p 9000:9000 \
 		-p 9100:9100 \
 		--device /dev/ttyAMA0:/dev/ttyAMA0 \
@@ -33,6 +34,6 @@ donne la réponse HTTP\200
 	  
 ### Commande
 
-   [http://url-conteneur:9000/recepteurDHT11](http://url-conteneur:9000/recepteurDHT11)
+   [http://url-conteneur:9000/cmd/recepteurDHT11](http://url-conteneur:9000/cmd/recepteurDHT11)
 
-donne la réponse HTTP\20 et renvoie le résultat de l'exécution de l'exécutable `recepteurDHT11`
+donne la réponse HTTP\200 et renvoie le résultat de l'exécution de l'exécutable `recepteurDHT11`
