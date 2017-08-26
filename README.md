@@ -1,23 +1,24 @@
-# Image docker WiringPi
+# Image docker WiringPi - Radio
+
+Le conteneur expose une API de commande du binaire [radioEmission](https://github.com/vzwingma/domotique/blob/master/radioEmission/radioEmission) afin de commander les interrupteurs par radio
+
+Plus d'informations sur le [Wiki du projet](https://github.com/vzwingma/domotique/wiki/_Module-Radio)
 
 ## Téléchargement depuis Docker Hub
-      docker pull vzwingmann/wiringpi:arm
+      docker pull vzwingmann/wiringpi:arm-radio
 
 ## Construction de l'image
-      docker build -t vzwingmann/wiringpi:arm .
+      docker build -t vzwingmann/wiringpi:arm-radio .
 
 ## Exécution du conteneur 
-      docker run --name=dht11 -d \
+      docker run --name=radio -d \
 		--privileged \
-		-p 9000:9000 \
-		-p 9100:9100 \
-		-v $HOME_PATH/:/data/bin \
+		-p 9001:9000 \
+		-p 9101:9100 \
+		-v server.js:/data/server.js
 		--device /dev/ttyAMA0:/dev/ttyAMA0 \
 		--device /dev/mem:/dev/mem \
-		-it vzwingmann/wiringpi:arm
-    
-où 
-- `$HOME_PATH/executable` : Répertoire vers les exécutables
+		-it vzwingmann/wiringpi:arm-radio
 
 ## Utilisation
 
@@ -33,6 +34,6 @@ donne la réponse HTTP\200
 	  
 ### Commande
 
-   [http://url-conteneur:9000/nom_exécutable](http://url-conteneur:9000/nom_exécutable)
+   [http://url-conteneur:9000/radioEmission](http://url-conteneur:9000/radioEmission)
 
-donne la réponse HTTP\20 et renvoie le résultat de l'exécution de l'exécutable
+donne la réponse HTTP\20 et renvoie le résultat de l'exécution de l'exécutable `radioEmission`
