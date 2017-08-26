@@ -15,7 +15,7 @@ Plus d'informations sur le [Wiki du projet](https://github.com/vzwingma/domotiqu
 		--privileged \
 		-p 9001:9000 \
 		-p 9101:9100 \
-		-v server.js:/data/server.js
+		-e "APP_NAME=Radio" \
 		--device /dev/ttyAMA0:/dev/ttyAMA0 \
 		--device /dev/mem:/dev/mem \
 		-it vzwingmann/wiringpi:arm-radio
@@ -34,6 +34,6 @@ donne la réponse HTTP\200
 	  
 ### Commande
 
-   [http://url-conteneur:9000/radioEmission](http://url-conteneur:9000/radioEmission)
+   [http://url-conteneur:9000/cmd](http://url-conteneur:9000/cmd)
 
-donne la réponse HTTP\20 et renvoie le résultat de l'exécution de l'exécutable `radioEmission`
+donne la réponse HTTP\200 et renvoie le résultat de l'exécution de la commande
