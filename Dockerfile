@@ -4,6 +4,7 @@ RUN apt-get update
 RUN apt-get install -y node npm
 RUN npm install express --save
 RUN npm install child_process --save
+RUN npm install body-parser --save
 
 COPY server.js /data/server.js
 
